@@ -20,4 +20,4 @@ LOG_FORMAT_SSL=$LOG_FORMAT
 SSL_CERT_2=$SSL_CERT_2
 SSL_KEY_2=$SSL_KEY_2
 
-goaccess -f $ACCESS_LOG_SSL -a -o $OUTPUT_SSL --real-time-html --html-report-title="Server Statistics - SSL" --ws-url=$URL_SSL --port=$PORT_SSL --ssl-cert=$SSL_CERT_2 --ssl-key=$SSL_KEY_2 --time-format=$TIME_FORMAT_SSL --date-format=$DATE_FORMAT_SSL --log-format=$LOG_FORMAT_SSL
+sudo goaccess -f $ACCESS_LOG_SSL -a -o $OUTPUT_SSL --real-time-html --html-report-title="Server Statistics - SSL" --ws-url=$URL_SSL --port=$PORT_SSL --ssl-cert=$SSL_CERT_2 --ssl-key=$SSL_KEY_2 --time-format=$TIME_FORMAT_SSL --date-format=$DATE_FORMAT_SSL --log-format=$LOG_FORMAT_SSL
