@@ -1,14 +1,14 @@
 #!/bin/bash
 
-ACCESS_LOG=/var/log/apache2/access.log
+ACCESS_LOG=/path/to/access.log
 URL=example.com
 PORT=9870
-OUTPUT=~/Projects/rtweb/index.html
+OUTPUT=/path/to/output/index.html
 TIME_FORMAT=%H:%M:%S
 DATE_FORMAT=%d/%b/%y
 LOG_FORMAT=COMBINED
-SSL_CERT_1=/etc/apache2/ssl/rtweb-ffy-ch.crt
-SSL_KEY_1=/etc/apache2/ssl/rtweb-ffy-ch.key
+SSL_CERT_1=/path/to/cert-file.crt
+SSL_KEY_1=/path/to/cert-key.key
 
 [ -f /etc/systemd/goaccess-report.conf ] && source /etc/systemd/goaccess-report.conf || true
 ACCESS_LOG=$ACCESS_LOG
@@ -20,4 +20,4 @@ LOG_FORMAT=$LOG_FORMAT
 SSL_CERT_1=$SSL_CERT_1
 SSL_KEY_1=$SSL_KEY_1
 
-sudo goaccess -f $ACCESS_LOG -a -o $OUTPUT --real-time-html --ws-url=$URL --port=$PORT --ssl-cert=$SSL_CERT_1 --ssl-key=$SSL_KEY_1 --time-format=$TIME_FORMAT --date-format=$DATE_FORMAT --log-format=$LOG_FORMAT
+goaccess -f $ACCESS_LOG -a -o $OUTPUT --real-time-html --ws-url=wss://$URL --port=$PORT --ssl-cert=$SSL_CERT_1 --ssl-key=$SSL_KEY_1 --time-format=$TIME_FORMAT --date-format=$DATE_FORMAT --log-format=$LOG_FORMAT

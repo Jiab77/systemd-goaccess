@@ -1,15 +1,15 @@
 [Unit]
-Description=Goaccess Web log Report For Site rtweb-ssl.ffy.ch
+Description=Goaccess Web log Report For Site example-ssl.com
 After=network.target
 
 [Service]
 Type=simple
-User=root
-Group=root
+#User=root
+#Group=root
 Restart=always
 ExecStart=/usr/local/bin/goaccess-reportssl
-StandardOutput=null
-StandardError=null
+#StandardOutput=null
+#StandardError=null
 
 [Install]
 WantedBy=multi-user.target
