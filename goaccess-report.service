@@ -1,0 +1,15 @@
+[Unit]
+Description=Goaccess Web log Report For Site rtweb.ffy.ch
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/local/bin/goaccess-report
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target
